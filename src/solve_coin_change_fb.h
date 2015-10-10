@@ -12,12 +12,20 @@
 
 
 #include "solve_coin_change.h"
+#include "solution_set.h"
 #include <vector>
+
+using std::vector;
+
+
 
 class SolveCoinChangeFb : public SolveCoinChange {
 public:
-    SolveCoinChangeFb();
-    std::vector<int>* solve();
+    SolveCoinChangeFb(string changes_file, string coins_file, string output_file);
+    void solve();
+    void backtrack(int change, vector<int> coin_type, int coins_so_far, bool &solution_found, int &best_fewest_coins, vector<int> &best_coin_type);
+    bool promising(int change, int coins_returned, bool solution_found, int best_fewest_coins);
+    int backtrack_nodes;
 };
 
 #endif /* defined(__solve_coin_change_fb__) */

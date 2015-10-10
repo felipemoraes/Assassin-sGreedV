@@ -19,7 +19,7 @@ include_directories(.)
 
 file(GLOB solve_SRC
         "solve*.h"
-        "solve*.cc"
+        "so*.cc"
 )
 add_library(solve_coin_change ${solve_SRC})
 

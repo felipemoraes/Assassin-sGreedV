@@ -12,11 +12,11 @@
 
 
 #include "solve_coin_change.h"
-#include <vector>
+
 class SolveCoinChangeAg : public SolveCoinChange {
 public:
-    SolveCoinChangeAg();
-    std::vector<int>* solve();
+    SolveCoinChangeAg(string changes_file, string coins_file, string output_file);
+    void solve();
 };
 
 #endif /* defined(__solve_coin_change_ag__) */

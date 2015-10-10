@@ -16,8 +16,8 @@
 
 class SolveCoinChangePd : public SolveCoinChange {
 public:
-    SolveCoinChangePd();
-    std::vector<int>* solve();
+    SolveCoinChangePd(string changes_file, string coins_file, string output_file);
+    void solve();
 };
 
 #endif /* defined(__solve_coin_change_pd__) */

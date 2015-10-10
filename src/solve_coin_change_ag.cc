@@ -9,11 +9,9 @@
 
 #include "solve_coin_change_ag.h"
 
-SolveCoinChangeAg::SolveCoinChangeAg() : SolveCoinChange() {
+SolveCoinChangeAg::SolveCoinChangeAg(string changes_file, string coins_file, string output_file) : SolveCoinChange(changes_file,coins_file, output_file) {
 }
 
 
-std::vector<int>* SolveCoinChangeAg::solve(){
-    std::vector<int>* solution = new std::vector<int>();
-    return solution;
+void SolveCoinChangeAg::solve(){
 }

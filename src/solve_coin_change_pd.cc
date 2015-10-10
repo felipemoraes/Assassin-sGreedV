@@ -9,12 +9,10 @@
 
 #include "solve_coin_change_pd.h"
 
-SolveCoinChangePd::SolveCoinChangePd() : SolveCoinChange() {
+SolveCoinChangePd::SolveCoinChangePd(string changes_file, string coins_file, string output_file) : SolveCoinChange(changes_file,coins_file, output_file) {
 }
 
-std::vector<int>* SolveCoinChangePd::solve(){
-    std::vector<int>* solution = new std::vector<int>();
-    return solution;
+void SolveCoinChangePd::solve(){
 }
 
 

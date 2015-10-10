@@ -12,11 +12,21 @@
 
 #include <vector>
 #include <iostream>
+#include <fstream>
+#include <string>
+
+using std::vector;
+using std::string;
+
+using namespace std;
 
 class SolveCoinChange {
 public:
-    SolveCoinChange();
-    virtual std::vector<int>* solve() = 0;
+    SolveCoinChange(string changes_file, string coins_file, string output_file);
+    virtual void solve() = 0;
+    vector<int>* coins_;
+    string changes_file_;
+    string output_file_;
 };
 
 #endif /* defined(__solve_coin_change__) */

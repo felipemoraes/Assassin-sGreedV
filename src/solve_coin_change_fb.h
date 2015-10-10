@@ -12,7 +12,6 @@
 
 
 #include "solve_coin_change.h"
-#include "solution_set.h"
 #include <vector>
 
 using std::vector;

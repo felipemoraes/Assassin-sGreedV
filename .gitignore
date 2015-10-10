@@ -40,4 +40,5 @@ Makefile
 cmake_install.cmake
 install_manifest.txt
 bin/
-
+test/output.txt
+src/.*

@@ -12,6 +12,8 @@
 
 
 #include "solve_coin_change.h"
+#include <sys/time.h>
+#include <sys/resource.h>
 #include <vector>
 
 class SolveCoinChangePd : public SolveCoinChange {

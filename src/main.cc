@@ -9,7 +9,7 @@ using std::string;
 
 int main(int argc, char** argv){
     // Parse comand line arguments
-    string enemies_file, levels_file, output_file, type; 
+    string enemies_file, levels_file, output_file, type;
     if (argc < 9) {
         cout << "Usage: ./Assassins_GreedV --enemeis [enemes_file] --levels [levels_file] --output [output_file] --type [fb|pd|ag]" << endl; 
         return 1;

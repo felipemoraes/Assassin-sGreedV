@@ -25,20 +25,37 @@ void SolveCoinChangeFb::solve(){
 
     if (fchange.is_open()){
         while (getline(fchange,line)){
+                /*variable for time measure*/
+             float execution_time = 0;
+             struct timeval t_start;
+             struct timeval t_end;               
+             gettimeofday(&t_start, NULL);
+
             int best_fewest_coins = -1;
             bool solution_found = false;
+            std::sort(coins_->begin(),coins_->end(), std::greater<int>());
             backtrack(stoi(line),solution,0,solution_found,best_fewest_coins,solution);
-            foutput << best_fewest_coins << " ";
-            for (int i = 0; i<solution.size() ;++i){
-                if (solution[i] != 0) {
-                    while (solution[i]>0){
-                        foutput << (*coins_)[i] << " ";
-                        solution[i]--;
-                    }
-                }     
-            }         
-            foutput << std::endl;        
+            if (best_fewest_coins < 0){
+                foutput << 0;
+            } else {
+                foutput << best_fewest_coins << " ";
+                for (int i = 0; i<solution.size() ;++i){
+                    if (solution[i] != 0) {
+                        while (solution[i]>0){
+                            foutput << (*coins_)[i] << " ";
+                            solution[i]--;
+                        }
+                    }     
+                }
+            }
+            foutput << std::endl;
+            //cout << "Backtrack nodes " << backtrack_nodes << endl;
             backtrack_nodes = 0;
+            gettimeofday(&t_end, NULL);
+            execution_time = (t_end.tv_sec-t_start.tv_sec)*1000000;
+            execution_time = (execution_time+(t_end.tv_usec-t_start.tv_usec))/1000000;
+            printf("%.5f\n", execution_time);
+                                
        }
     } else {
         std::cout << "File not found: " << changes_file_ << std::endl;

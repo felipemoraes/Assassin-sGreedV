@@ -13,6 +13,8 @@
 
 #include "solve_coin_change.h"
 #include <vector>
+#include <sys/time.h>
+#include <sys/resource.h>
 
 using std::vector;
 

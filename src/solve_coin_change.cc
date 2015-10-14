@@ -19,7 +19,12 @@ SolveCoinChange::SolveCoinChange(string changes_file, string coins_file, string 
         while (getline(cfile,line)){
             coins_->push_back(stoi(line));
         }
+        cfile.close();
     } else {
         std::cout << "File not found" << std::endl;
     }
+}
+
+SolveCoinChange::~SolveCoinChange(){
+    delete coins_;
 }

@@ -10,7 +10,8 @@
 #ifndef __solve_coin_change_ag__
 #define __solve_coin_change_ag__
 
-
+#include <sys/time.h>
+#include <sys/resource.h>
 #include "solve_coin_change.h"
 
 class SolveCoinChangeAg : public SolveCoinChange {

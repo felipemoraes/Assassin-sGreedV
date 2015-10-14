@@ -25,6 +25,12 @@ void SolveCoinChangeAg::solve(){
     std::sort(coins_->begin(),coins_->end(), std::greater<int>());
     if (fchange.is_open()){
         while (getline(fchange,line)){
+            /*variable for time measure*/
+            float execution_time = 0;
+            struct timeval t_start;
+            struct timeval t_end;                            
+            gettimeofday(&t_start, NULL);
+
             int change = stoi(line);
             int best_fewest_coins = 0;
        
@@ -50,6 +56,10 @@ void SolveCoinChangeAg::solve(){
                 }     
             }         
             foutput << std::endl;        
+            gettimeofday(&t_end, NULL);
+            execution_time = (t_end.tv_sec-t_start.tv_sec)*1000000;
+            execution_time = (execution_time+(t_end.tv_usec-t_start.tv_usec))/1000000;
+            printf("%.5f\n", execution_time);
        }
     } else {
         std::cout << "File not found: " << changes_file_ << std::endl;

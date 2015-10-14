@@ -23,6 +23,7 @@ using namespace std;
 class SolveCoinChange {
 public:
     SolveCoinChange(string changes_file, string coins_file, string output_file);
+    ~SolveCoinChange();
     virtual void solve() = 0;
     vector<int>* coins_;
     string changes_file_;

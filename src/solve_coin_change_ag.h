@@ -12,7 +12,10 @@
 
 #include <sys/time.h>
 #include <sys/resource.h>
+#include <algorithm>
 #include "solve_coin_change.h"
+
+using namespace std;
 
 class SolveCoinChangeAg : public SolveCoinChange {
 public:

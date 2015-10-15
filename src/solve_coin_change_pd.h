@@ -14,7 +14,11 @@
 #include "solve_coin_change.h"
 #include <sys/time.h>
 #include <sys/resource.h>
+#include <limits>
+#include <cstdint>
 #include <vector>
+
+using namespace std;
 
 class SolveCoinChangePd : public SolveCoinChange {
 public:

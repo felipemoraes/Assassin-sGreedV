@@ -17,8 +17,8 @@ void SolveCoinChangeFb::solve(){
 
     std::vector<int> solution;
     std::string line;   
-    ifstream fchange(changes_file_);
-    ofstream foutput(output_file_);
+    ifstream fchange(changes_file_.c_str());
+    ofstream foutput(output_file_.c_str());
     for (int i = 0; i < coins_->size(); ++i){
         solution.push_back(0);
     }
@@ -49,12 +49,12 @@ void SolveCoinChangeFb::solve(){
                 }
             }
             foutput << std::endl;
-            //cout << "Backtrack nodes " << backtrack_nodes << endl;
+            //cout << backtrack_nodes << endl;
             backtrack_nodes = 0;
             gettimeofday(&t_end, NULL);
             execution_time = (t_end.tv_sec-t_start.tv_sec)*1000000;
             execution_time = (execution_time+(t_end.tv_usec-t_start.tv_usec))/1000000;
-            printf("%.5f\n", execution_time);
+//            printf("%.5f\n", execution_time);
                                 
        }
     } else {

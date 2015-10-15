@@ -13,10 +13,12 @@
 
 #include "solve_coin_change.h"
 #include <vector>
+#include <string>
+#include <algorithm>
 #include <sys/time.h>
 #include <sys/resource.h>
 
-using std::vector;
+using namespace std;
 
 
 

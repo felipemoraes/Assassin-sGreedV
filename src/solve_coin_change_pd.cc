@@ -29,7 +29,7 @@ void SolveCoinChangePd::solve(){
             int *s = new int[change+1];
             table[0] = 0;
             for (int j = 1; j <= change; ++j){
-                table[j] = INT_MAX;
+                table[j] = std::numeric_limits<std::int32_t>::max();
                 for (int i = 0; i<coins_->size();++i){
                     int coin = (*coins_)[i];
                     if(j >= coin && 1 + table[j-coin] < table[j]){
@@ -50,7 +50,7 @@ void SolveCoinChangePd::solve(){
             gettimeofday(&t_end, NULL);
             execution_time = (t_end.tv_sec-t_start.tv_sec)*1000000;
             execution_time = (execution_time+(t_end.tv_usec-t_start.tv_usec))/1000000;
-            printf("%.5f\n", execution_time);
+//            printf("%.5f\n", execution_time);
        }
     } else {
         std::cout << "File not found: " << changes_file_ << std::endl;

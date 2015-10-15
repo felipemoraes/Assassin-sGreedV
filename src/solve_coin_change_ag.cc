@@ -59,7 +59,7 @@ void SolveCoinChangeAg::solve(){
             gettimeofday(&t_end, NULL);
             execution_time = (t_end.tv_sec-t_start.tv_sec)*1000000;
             execution_time = (execution_time+(t_end.tv_usec-t_start.tv_usec))/1000000;
-            printf("%.5f\n", execution_time);
+//            printf("%.5f\n", execution_time);
        }
     } else {
         std::cout << "File not found: " << changes_file_ << std::endl;

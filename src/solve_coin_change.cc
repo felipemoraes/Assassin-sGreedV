@@ -14,7 +14,7 @@ SolveCoinChange::SolveCoinChange(string changes_file, string coins_file, string 
     changes_file_ = changes_file;
     output_file_ = output_file;
     string line;
-    ifstream cfile(coins_file);
+    ifstream cfile(coins_file.c_str());
     if (cfile.is_open()){
         while (getline(cfile,line)){
             coins_->push_back(stoi(line));
